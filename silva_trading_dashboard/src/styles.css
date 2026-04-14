@@ -1,0 +1,247 @@
+:root {
+  color-scheme: dark;
+  --bg: #050816;
+  --panel: #0f172a;
+  --panel-2: #111c33;
+  --border: #1e293b;
+  --text: #e5eefc;
+  --muted: #94a3b8;
+  --green: #22c55e;
+  --red: #ef4444;
+  --blue: #38bdf8;
+  --yellow: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(56,189,248,0.10), transparent 24%),
+    radial-gradient(circle at top left, rgba(34,197,94,0.08), transparent 20%),
+    var(--bg);
+  color: var(--text);
+}
+
+.page { min-height: 100vh; }
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.05;
+}
+
+.hero p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  max-width: 700px;
+}
+
+.upload {
+  background: linear-gradient(135deg, #0b1224, #111c33);
+  border: 1px solid #233047;
+  border-radius: 18px;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.upload input { display: none; }
+
+.file-pill {
+  display: inline-block;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: rgba(15, 23, 42, 0.9);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.cards {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 18px;
+}
+
+.charts {
+  grid-template-columns: 2fr 1fr;
+  margin-bottom: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(15,23,42,0.95), rgba(12,19,34,0.95));
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+}
+
+.span-2 { grid-column: span 1; }
+
+.card-label {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.big-number {
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.big-number.small {
+  font-size: 42px;
+}
+
+.muted {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.signal {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.buy {
+  background: rgba(34,197,94,0.15);
+  border: 1px solid rgba(34,197,94,0.35);
+  color: #78f0a5;
+}
+
+.sell {
+  background: rgba(239,68,68,0.15);
+  border: 1px solid rgba(239,68,68,0.35);
+  color: #ff8e8e;
+}
+
+.neutral {
+  background: rgba(148,163,184,0.14);
+  border: 1px solid rgba(148,163,184,0.25);
+  color: #d7dfeb;
+}
+
+.diagnostic {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.chart-box {
+  width: 100%;
+  height: 320px;
+}
+
+.strength-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.strength-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.bar {
+  width: 100%;
+  background: #0a1020;
+  border: 1px solid #1d2940;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.fill-up { background: var(--green); }
+.fill-down { background: var(--red); }
+.fill-flat { background: #94a3b8; }
+
+.up { color: #7ef0aa; }
+.down { color: #ff8e8e; }
+.flat { color: #c7d1dd; }
+
+.insights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.insight {
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  background: #0a1020;
+}
+
+.insight strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.insight p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.insight-good strong { color: #7ef0aa; }
+.insight-warn strong { color: #ffd166; }
+.insight-info strong { color: #7dd3fc; }
+
+@media (max-width: 1100px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .charts { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .cards { grid-template-columns: 1fr; }
+  h1 { font-size: 30px; }
+  .big-number { font-size: 42px; }
+  .big-number.small { font-size: 34px; }
+  .container { padding: 22px 14px 36px; }
+}
